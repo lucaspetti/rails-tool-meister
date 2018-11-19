@@ -9,9 +9,8 @@
 
       <% if user_signed_in? %>
       <!-- Links -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-            <!--    <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-            <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %> -->
+      <%= link_to t(".tools", default:"Share Tools"), tools_path,
+        class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -24,8 +23,8 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Sign-out") %>
               <% end %>
             </li>
           </ul>
