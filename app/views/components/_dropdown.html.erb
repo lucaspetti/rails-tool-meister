@@ -1,0 +1,5 @@
+  <% form_for @user do |city, tool| %>
+    <%= city.select :city, [['Berlin', 'berlin'], ['Frankfurt', 'frankfurt'], ['Munich', 'munich']] %>
+  <%= tool.select :tool, [['Hammer','hammer'],['Drill','drill'],['Screwdriver','screwdriver']] %>
+  <%= f.submit %>
+<% end %>
