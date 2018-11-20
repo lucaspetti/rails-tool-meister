@@ -23,26 +23,3 @@
   </select>
 </div>
     <a class="btn btn-primary btn-lg">Validate</a>
-  </div>
-</div>
-
-
-  <h2 class="text-center">Add ingredients</h2>
-    <%= simple_form_for [@tool, @dose] do |f| %>
-    <%= f.input :description, label: 'Description', error: 'description of dose is mandatory' %>
-    <%= f.association :ingredient, label: "Ingredients", error: 'description of dose is mandatory' %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-
-
-    <div class="col-sm-offset-3 col-sm-6">
-    <%= simple_form_for(@tool) do |f| %>
-    <%= f.input :name, label: 'What is the name of your tool?', error: 'Name of tool is mandatory' %>
-
-    <%= f.input :photo, label: 'Please upload a nice photo of your tool', error: 'Photo of tool is mandatory'  %>
-    <%= f.input :photo_cache, as: :hidden %>
-
-    <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
