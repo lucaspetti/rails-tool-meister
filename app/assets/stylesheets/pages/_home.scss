@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding : 50px;
+  background-color : #FC6C3C;
+  color : white;
+  font-weight: bold;
+  font-size: 35;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+  align-content: center;
+
+}
