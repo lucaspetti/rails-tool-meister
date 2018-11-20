@@ -2,26 +2,8 @@
   <div class="banner-content">
     <h1>Tool-meisTer</h1>
     <p>Find tools in your neighborhood</p>
-    <div class="drop-city">
-      <label for="sel1">Select Your City:</label>
-      <select class="form-control" id="sel1">
-        <option>Berlin</option>
-        <option>Cologne</option>
-        <option>Dusselforf</option>
-        <option>Hamburg</option>
-        <option>Munich</option>
-      </select>
-    </div>
-    <div class="drop-tools">
-      <label for="sel2">Select Your tool:</label>
-      <select class="form-control" id="sel2">
-        <option>Chainsaw</option>
-        <option>Drill</option>
-        <option>Hammer</option>
-        <option>Screwdriver</option>
-        <option>Other Tool</option>
-      </select>
-    </div>
-    <a class="btn btn-primary btn-lg">Validate</a>
+
+    <%= render "components/searchform" %>
+
   </div>
 </div>

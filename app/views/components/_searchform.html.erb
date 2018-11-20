@@ -1,0 +1,16 @@
+<%= form_tag tools_path, method: :get do %>
+  <%#= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a movie"
+  %>
+  <%#= select_tag "location", options_from_collection_for_select(@locations, "id", "name")  %>
+  <%= select_tag "location", options_for_select(@locations, "location"), include_blank: true,
+    class: "form-control",
+     prompt: "Select a city" %>
+  <%= select_tag "category", options_for_select(@tools, "category"),
+    include_blank: true,
+    class: "form-control",
+    prompt: "Select a category" %>
+  <%= button_tag %>
+<% end %>
