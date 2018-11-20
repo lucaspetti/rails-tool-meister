@@ -1,5 +1,5 @@
 class ToolsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # @tools = Tool.all
@@ -12,14 +12,17 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:id])
+    authorize @tool
   end
 
   def new
     @tool = Tool.new
+    authorize @tool
   end
 
   def create
     @tool = Tool.new(tool_params)
+    @tool.user = current_user
     authorize @tool
     if @tool.save
       redirect_to tool_path(@tool)
