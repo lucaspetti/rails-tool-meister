@@ -1,10 +1,13 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     # @tools = Tool.all
     tools_loc = Tool.where(location: params[:location])
     tools_cat = Tool.where(category: params[:category])
     @tools = (tools_cat + tools_loc).uniq
     # raise
+    @tools = policy_scope(Tool)
   end
 
   def show
@@ -17,6 +20,7 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
+    authorize @tool
     if @tool.save
       redirect_to tool_path(@tool)
     else

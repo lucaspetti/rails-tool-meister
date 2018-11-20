@@ -10,9 +10,8 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'components/flashes' %>
     <%= render 'components/navbar' %>
-
+    <%= render 'components/flashes' %>
     <%= yield %>
 
     <%= render "components/footer" %>
