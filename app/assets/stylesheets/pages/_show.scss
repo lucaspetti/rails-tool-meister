@@ -1,0 +1,17 @@
+@import "index";
+
+// .main-container {
+//   display: flex;
+// }
+// #map {
+//   flex: 0 0 450px;
+//   height: 100vh;
+//   position: sticky !important; /* !important to override Gmaps inline CSS */
+//   top: 0 !important;
+// }
+
+.grid {
+  display: grid;
+  grid-template-columns: 400px 1fr 1fr 1fr;
+  grid-template-rows: 25% 25% 25% 25%
+}
