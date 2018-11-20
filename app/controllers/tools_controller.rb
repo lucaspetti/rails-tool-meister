@@ -2,8 +2,12 @@ class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    # @tools = Tool.all
+    tools_loc = Tool.where(location: params[:location])
+    tools_cat = Tool.where(category: params[:category])
+    @tools = (tools_cat + tools_loc).uniq
+    # raise
     @tools = policy_scope(Tool)
-    # authorize @tool
   end
 
   def show
