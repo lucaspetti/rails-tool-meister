@@ -1,6 +1,9 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
-    @tools = Tool.all
+    @tools = policy_scope(Tool)
+    # authorize @tool
   end
 
   def show
@@ -13,6 +16,7 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
+    authorize @tool
     if @tool.save
       redirect_to tool_path(@tool)
     else
