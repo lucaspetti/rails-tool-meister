@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :tools do
     resources :bookings, only: [:index, :show, :new, :create]
   end
+
+  get :my_tools, to: "tools#my_tools"
 end

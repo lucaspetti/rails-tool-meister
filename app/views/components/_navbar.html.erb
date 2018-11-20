@@ -9,8 +9,10 @@
 
       <% if user_signed_in? %>
       <!-- Links -->
-      <%= link_to t(".tools", default:"Share Tools"), tools_path,
+      <%= link_to t(".tools", default:"My Tools"), my_tools_path,
         class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".tools", default:"Add Tool"), new_tool_path,
+      class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
