@@ -1,0 +1,26 @@
+.new-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    padding: 50px 70px;
+    width: 90rem;
+    font-weight: lighter;
+    label {
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+    .reduce-width {
+      width: 45rem;
+    }
+    .display-photo {
+      text-align: left;
+      width: 30rem;
+    }
+  }
+  button {
+    align-self: center;
+    border-radius: 5px;
+  }
+}
