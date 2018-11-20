@@ -1,11 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create(first_name: "Admin", email: "admin@admin.com" , password: "12345678", admin: true)
 User.create(first_name: "Lucas", email: "luc_petti@hotmail.com", password: "12345678")
+
 category = ["drill", "hammer", "screwdriver", "brush"]
 location = ["Berlin", "Frankfurt", "Munich", "Cologne", "Dusselforf", "Hamburg"]
 photo = ["http://shop.strato.de/WebRoot/Store11/Shops/219750/4FB1/1E18/8371/E65B/2B20/C0A8/28BC/AC3C/GSR_108-2-LI.jpg",
@@ -63,9 +58,3 @@ Tool.create(name: "Tool4",
   location: location.sample,
   photo: photo.sample,
   price_per_day: price_per_day.sample)
-
-
-
-
-
-
