@@ -1,6 +1,10 @@
 class ToolsController < ApplicationController
   def index
-    @tools = Tool.all
+    # @tools = Tool.all
+    tools_loc = Tool.where(location: params[:location])
+    tools_cat = Tool.where(category: params[:category])
+    @tools = (tools_cat + tools_loc).uniq
+    # raise
   end
 
   def show

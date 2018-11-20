@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(252,108,60,0.3) 100%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1458829549177-e9a8f3db5b14?ixlib=rb-0.3.5&s=714b860708c51a33baf4b80c806a8016&auto=format&fit=crop&w=2550&q=80');">
   <div class="banner-content">
     <h1>Tool-meisTer</h1>
-    <p>find the Tools you need in you neighborhood</p>
+    <p>Find tools in your neighborhood</p>
     <div class="drop-city">
   <label for="sel1">Select Your City:</label>
   <select class="form-control" id="sel1">
@@ -23,5 +23,26 @@
   </select>
 </div>
     <a class="btn btn-primary btn-lg">Validate</a>
+  </div>
+</div>
+
+
+  <h2 class="text-center">Add ingredients</h2>
+    <%= simple_form_for [@tool, @dose] do |f| %>
+    <%= f.input :description, label: 'Description', error: 'description of dose is mandatory' %>
+    <%= f.association :ingredient, label: "Ingredients", error: 'description of dose is mandatory' %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+
+
+    <div class="col-sm-offset-3 col-sm-6">
+    <%= simple_form_for(@tool) do |f| %>
+    <%= f.input :name, label: 'What is the name of your tool?', error: 'Name of tool is mandatory' %>
+
+    <%= f.input :photo, label: 'Please upload a nice photo of your tool', error: 'Photo of tool is mandatory'  %>
+    <%= f.input :photo_cache, as: :hidden %>
+
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
