@@ -3,17 +3,22 @@
 </div>
 
 <div class="container">
-  <%= link_to 'back to all tools', tools_path %>
-<div>
-  <h1><%= @tool.name %></h1>
-  <h2><%= @tool.category %></h2>
-</div>
-<div>
-  <h2><%= @tool.price_per_day %></h2>
+    <%= link_to 'back to all tools', tools_path %>
+  <div>
+    <h1><%= @tool.name %></h1>
+    <h2><%= @tool.category %></h2>
+  </div>
+  <div>
+    <h2><%= @tool.price_per_day %></h2>
+  </div>
+
+  <div>
+    <h2><%= @location%></h2>
+  </div>
+
+  <%= cl_image_tag @tool.photo, height: 300, width: 400, crop: :fill %>
+
 </div>
 
-<div>
-  <h2><%= @location%></h2>
-</div>
 
-</div>
+
