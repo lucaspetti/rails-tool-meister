@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h3>Your bookings:</h3>
+  <% @bookings.each do |b| %>
+    <h4>Tool:</h4>
+    <%= b.tool.name %>
+    <h4>Start date:</h4>
+    <%= b.start_date %>
+    <h4>End date:</h4>
+    <%= b.end_date %>
+  <% end %>
+</div>
