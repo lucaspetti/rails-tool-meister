@@ -70,3 +70,20 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.price-show {
+  color: green;
+}
+
+.tool-name {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.tool-description {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 12px;
+}
