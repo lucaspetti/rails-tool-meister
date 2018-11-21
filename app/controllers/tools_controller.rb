@@ -16,6 +16,18 @@ class ToolsController < ApplicationController
       end
     else
       @tools = Tool.all
+
+      @tools = Tool.where.not(latitude: nil, longitude: nil)
+
+      @markers = @tools.map do |tool|
+        {
+          lng: tool.longitude,
+          lat: tool.latitude
+        }
+      end
+    end
+
+    def set_map
     end
 
     # raise
