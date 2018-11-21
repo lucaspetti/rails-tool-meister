@@ -8,7 +8,8 @@ description = ["Its a wonderful tool- maintained by my friend Cedric",
   "Its a wonderful tool- maintained by my Ole",
   "Its a wonderful tool- maintained by my Lucas"]
 
-Tool.create(name: "Tool1",
+Tool.create(name: category.sample,
+  image: '../app/assets/images/logo.jpg',
   description: description.sample,
   category: category.sample,
   available: true,
@@ -16,7 +17,8 @@ Tool.create(name: "Tool1",
   location: location.sample,
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Tool2",
+Tool.create!(name: category.sample,
+  image: '../app/assets/images/logo.jpg',
   description: description.sample,
   category: category.sample,
   available: true,
@@ -24,7 +26,8 @@ Tool.create!(name: "Tool2",
   location: location.sample,
   price_per_day: price_per_day.sample)
 #
-Tool.create!(name: "Tool3",
+Tool.create!(name: category.sample,
+  image: '../app/assets/images/logo.jpg',
   description: description.sample,
   category: category.sample,
   available: true,
@@ -32,7 +35,8 @@ Tool.create!(name: "Tool3",
   location: location.sample,
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Tool4",
+Tool.create!(name: category.sample,
+  image: '../app/assets/images/logo.jpg',
   description: description.sample,
   category: category.sample,
   available: true,
@@ -40,7 +44,8 @@ Tool.create!(name: "Tool4",
   location: location.sample,
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Tool4",
+Tool.create!(name: category.sample,
+  image: '../app/assets/images/logo.jpg',
   description: description.sample,
   category: category.sample,
   available: true,
