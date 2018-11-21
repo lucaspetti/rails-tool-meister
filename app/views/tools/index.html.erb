@@ -3,19 +3,22 @@
   <div class="row">
 
     <% @tools.each do |tool| %>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-4" style="padding-top: 20px;">
       <!-- insert <div class="card"> -->
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= tool.photo.filename %>);">
         <!-- <div class="card-category">Popular</div> -->
-        <div class="card-description">
-          <h2><%=tool.name%></h2>
-          <p><%=tool.description%></p>
-          <p><%=tool.price_per_day%> EUR per day</p>
-        </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
+
         <!-- <a class="card-link" href="#" ></a> -->
         <a class="card-link" href="<%= tool_path(tool) %>"></a>
+      </div>
+      <div class="card-body-nd">
+        <h4 class="tool-name"><%=tool.name%></h4>
+        <p class="tool-description"><%=tool.description%></p>
 
+        <p class="price"><%=tool.price_per_day%> EUR per day</p>
+
+<!--         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
       </div>
     </div>
     <% end %>

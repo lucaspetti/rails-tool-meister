@@ -3,16 +3,19 @@ class ToolsController < ApplicationController
 
   skip_after_action :verify_authorized, only: [:my_tools]
 
-
   def index
-    if params[:location].empty? && params[:category].empty?
-      @tools = Tool.all
-    elsif params[:location].empty?
-      @tools = Tool.where(category: params[:category])
-    elsif params[:category].empty?
-      @tools = Tool.where(location: params[:location])
+    if params[:location] && params[:category]
+      if params[:location].empty? && params[:category].empty?
+        @tools = Tool.all
+      elsif params[:location].empty?
+        @tools = Tool.where(category: params[:category])
+      elsif params[:category].empty?
+        @tools = Tool.where(location: params[:location])
+      else
+        @tools = Tool.where(location: params[:location], category: params[:category])
+      end
     else
-      @tools = Tool.where(location: params[:location], category: params[:category])
+      @tools = Tool.all
     end
 
     # raise
