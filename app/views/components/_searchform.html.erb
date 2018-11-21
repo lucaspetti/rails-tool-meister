@@ -6,16 +6,19 @@
     placeholder: "Find a movie"
   %>
   <%#= select_tag "location", options_from_collection_for_select(@locations, "id", "name")  %>
-
+  <div class="form-group">
   <%= select_tag "location", options_for_select(@locations, "location"), include_blank: true,
     class: "form-control",
      prompt: "Select a city" %>
+  </div>
+  <div class="form-group">
   <%= select_tag "category", options_for_select(@tools, "category"),
     include_blank: true,
     class: "form-control",
     prompt: "Select a category" %>
-  <%= button_tag
-    %>
+  </div>
+  <%= button_tag "Submit", class: "button" %>
+
 <% end %>
 </div>
 
