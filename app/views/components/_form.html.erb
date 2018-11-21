@@ -1,14 +1,15 @@
-<div class="new-form">
-  <div class="display-photo"></div>
-  <%= simple_form_for @tool do |f| %>
-    <%= f.input :photo, label: 'Please upload a photo:', wrapper_html: { class: 'reduce-width' } %>
-    <%= f.input :name, wrapper_html: { class: 'reduce-width' }  %>
-    <%= f.input :category, wrapper_html: { class: 'reduce-width' } %>
-    <%= f.input :available, default: true %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :price_per_day %>
-    <%= f.button :submit , class: 'btn-primary' %>
-  <% end %>
+<div class="container">
+  <div class="new-form">
+    <div class="display-photo"></div>
+    <%= simple_form_for @tool do |f| %>
+      <%= f.input :photo, label: 'Please upload a photo:', wrapper_html: { class: 'reduce-width' } %>
+      <%= f.input :name, wrapper_html: { class: 'reduce-width' }  %>
+      <%= f.input :category, wrapper_html: { class: 'reduce-width' } %>
+      <%= f.input :available, default: true %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <%= f.input :price_per_day %>
+      <%= f.button :submit , class: 'btn-primary' %>
+    <% end %>
+  </div>
 </div>
-
