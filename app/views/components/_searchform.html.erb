@@ -1,3 +1,4 @@
+<div class="form-container">
 <%= form_tag tools_path, method: :get do %>
   <%#= text_field_tag :query,
     params[:query],
@@ -5,6 +6,7 @@
     placeholder: "Find a movie"
   %>
   <%#= select_tag "location", options_from_collection_for_select(@locations, "id", "name")  %>
+
   <%= select_tag "location", options_for_select(@locations, "location"), include_blank: true,
     class: "form-control",
      prompt: "Select a city" %>
@@ -12,5 +14,22 @@
     include_blank: true,
     class: "form-control",
     prompt: "Select a category" %>
-  <%= button_tag %>
+  <%= button_tag
+    %>
 <% end %>
+</div>
+
+
+<!-- <form action="/flats", method='get' class="form-container">
+  <h1 class="form-header">Book unique homes and experiences.</h1>
+  <label class="label" for="city">CITY</label><br>
+  <input placeholder="Berlin" type="text" name="city" class="form-body"><br>
+  <label class="label" for="price">PRICE</label><br>
+  <input placeholder="€ 70 per/night" type="text" name="price" class="form-body"><br>
+  <label class="label" for="guests">GUESTS</label><br>
+  <input placeholder="4 people" type="text" name="guests" class="form-body"><br>
+  <div class="button-form">
+    <input type="submit" value="Search" class="button">
+  </div>
+</form>
+ -->

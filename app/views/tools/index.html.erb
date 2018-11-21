@@ -6,7 +6,6 @@
         <!-- insert <div class="card"> -->
         <div class="card">
           <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tool.image %>');">
-          <a class="card-link" href="<%= tool_path(tool) %>"></a>
           </div>
 
           <div class="card-content">
@@ -21,6 +20,7 @@
               <!-- <img class="card-avatar" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
             </div>
           </div>
+          <a class="card-link" href="<%= tool_path(tool) %>"></a>
         </div>
       </div>
     <% end %>
