@@ -8,7 +8,7 @@ description = ["Its a wonderful tool- maintained by my friend Cedric",
   "Its a wonderful tool- maintained by my Ole",
   "Its a wonderful tool- maintained by my Lucas"]
 
-Tool.create(name: "Drill",
+Tool.create(name: "Grinding Machine",
   image: 'v1542723942/Tools/106105_1.jpg',
   description: description.sample,
   category: category[0],
@@ -17,17 +17,26 @@ Tool.create(name: "Drill",
   location: location.sample,
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: category.sample,
-  image: 'v1542723942/Tools/106105_1.jpg',
+Tool.create!(name: "Chainsaw",
+  image: 'v1542723942/Tools/123456.jpg',
   description: description.sample,
-  category: category.sample,
+  category: "Eletric Tools",
   available: true,
   user: User.first,
   location: location.sample,
   price_per_day: price_per_day.sample)
 #
-Tool.create!(name: category.sample,
-  image: 'v1542723942/Tools/106105_1.jpg',
+Tool.create!(name: "Grinding Machine 2",
+  image: 'v1542723942/Tools/418469_1.jpg',
+  description: description.sample,
+  category: category[0],
+  available: true,
+  user: User.first,
+  location: location.sample,
+  price_per_day: price_per_day.sample)
+
+Tool.create!(name: "Power Drill",
+  image: 'v1542723942/Tools/283333_1.jpg',
   description: description.sample,
   category: category.sample,
   available: true,
@@ -35,20 +44,11 @@ Tool.create!(name: category.sample,
   location: location.sample,
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: category.sample,
-  image: 'v1542723942/Tools/106105_1.jpg',
-  description: description.sample,
-  category: category.sample,
-  available: true,
-  user: User.first,
-  location: location.sample,
-  price_per_day: price_per_day.sample)
-
-Tool.create!(name: category.sample,
-  image: 'v1542723942/Tools/106105_1.jpg',
-  description: description.sample,
-  category: category.sample,
-  available: true,
-  user: User.first,
-  location: location.sample,
-  price_per_day: price_per_day.sample)
+# Tool.create!(name: category.sample,
+#   image: 'v1542723942/Tools/106105_1.jpg',
+#   description: description.sample,
+#   category: category.sample,
+#   available: true,
+#   user: User.first,
+#   location: location.sample,
+#   price_per_day: price_per_day.sample)
