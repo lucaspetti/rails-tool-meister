@@ -4,36 +4,46 @@
       <%= link_to 'back to all tools', tools_path %>
     </div>
 
-    <div class= "banner1" style="background-image: url('<%= cl_image_path @tool.photo.identifier %>')">
+    <div class= "banner-show" style="background-image: url('<%= cl_image_path @tool.photo.identifier %>')">
     </div>
 
   <div class= "container">
-    <div class="row">
-      <div class="col-sm-4">
-        <h2><%= @tool.name %></h2>
+    <div class="row margin-top"style="background-color: white">
+
+      <div class="section title">
+        <h3><%= @tool.name %></h3>
       </div>
-      <div class="col-sm-4">
-        <h2><%=@tool.price_per_day%> EUR per day</h2>
+      <div class="section title price-show">
+        <h3><%=@tool.price_per_day%> EUR per day</h3>
       </div>
-      <div class="col-sm-4">
-        <h2> book now </h2>
+      <div class="section book-now">
+        <h3><%= link_to "book now", "#jump", class: "btn-treehouse" %></h3>
      </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-8">
-        <h2>Details</h2>
-          <h2><%= @tool.name %></h1>
+      <div class="col-sm-8" style="background-color: white">
+        <h3>Details</h3>
+        <p><%= @tool.name %></p>
           <p><%= @tool.category %><p>
           <p><%=@tool.description%></p>
           <p><%= @tool.location%></p>
-      </div>
+        </div>
 
-      <div class="col-sm-4">
-        <h2> User </h2>
+      <div class="col-sm-4" style="background-color: white">
+        <h3> Handyman </h3>
+        <p> Max </p>
+        <p> Mustermann </p>
+        <p> Reviews </p>
+        <p> location</p>
          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      </div>
+       </div>
+    </div>
+
+    <div class="row margin-top" style="background-color: white">
+      <div class="col-sm-8" id="jump" style="align-items: center">
         <%= render 'components/bookingform' %>
+      </div>
     </div>
   <div>
 </div>
