@@ -34,6 +34,7 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
     authorize @tool
+    @booking = Booking.new
   end
 
   def new

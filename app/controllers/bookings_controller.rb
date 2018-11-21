@@ -13,10 +13,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @tool = Tool.find(params[:tool_id])
+    @booking.tool = @tool
+    @booking.user = current_user
+    authorize @tool
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to tool_path(@booking.tool)
     else
-      render :new
+      redirect_to tool_path(@booking.tool)
     end
   end
 
