@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
+  skip_after_action :verify_authorized, only: [:my_bookings]
+
   def index
-    @bookings = Booking.all
   end
 
   def show
@@ -8,16 +9,25 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    # @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @tool = Tool.find(params[:tool_id])
+    @booking.tool = @tool
+    @booking.user = current_user
+    authorize @tool
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to tool_path(@booking.tool)
     else
-      render :new
+      render :my_bookings
     end
+  end
+
+  def my_bookings
+    @bookings = policy_scope(Booking.where(user: current_user))
+    render :index
   end
 
   # def edit

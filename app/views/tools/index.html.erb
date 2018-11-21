@@ -1,27 +1,36 @@
 
 <div class="container">
   <div class="row">
-
     <% @tools.each do |tool| %>
-    <div class="col-xs-12 col-sm-4" style="padding-top: 20px;">
-      <!-- insert <div class="card"> -->
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= tool.photo.filename %>);">
-        <!-- <div class="card-category">Popular</div> -->
+      <div class="col-xs-12 col-sm-4">
+        <!-- insert <div class="card"> -->
+        <div class="card">
+          <!-- <a class="card-link" href="<%#= tool_path(tool) %>"></a> -->
 
+          <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tool.photo.filename %>');">
+          </div>
 
-        <!-- <a class="card-link" href="#" ></a> -->
-        <a class="card-link" href="<%= tool_path(tool) %>"></a>
+          <div class="card-content">
+            <div class="content-left">
+              <h4><%=tool.name%></h4>
+              <p><%= truncate(tool.description, length: 50) %></p>
+           </div>
+
+            <div class="content-right">
+              <p class="price"><%=tool.price_per_day%> EUR per day</p>
+              <!-- <img class="card-avatar" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card-body-nd">
-        <h4 class="tool-name"><%=tool.name%></h4>
-        <p class="tool-description"><%=tool.description%></p>
-
-        <p class="price"><%=tool.price_per_day%> EUR per day</p>
-
-<!--         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
-      </div>
-    </div>
     <% end %>
   </div>
+  <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 </div>
 

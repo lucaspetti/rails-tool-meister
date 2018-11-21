@@ -16,6 +16,18 @@ class ToolsController < ApplicationController
       end
     else
       @tools = Tool.all
+
+      @tools = Tool.where.not(latitude: nil, longitude: nil)
+
+      @markers = @tools.map do |tool|
+        {
+          lng: tool.longitude,
+          lat: tool.latitude
+        }
+      end
+    end
+
+    def set_map
     end
 
     # raise
@@ -34,6 +46,7 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
     authorize @tool
+    @booking = Booking.new
   end
 
   def new
@@ -71,6 +84,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :category, :location, :photo, :price_per_day)
+    params.require(:tool).permit(:name, :category, :location, :photo, :price_per_day, :discription   )
   end
 end

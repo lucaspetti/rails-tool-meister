@@ -1,31 +1,69 @@
 
 <div>
-  <%= link_to 'back to all tools', tools_path %>
+    <div class= "back-navigation">
+      <%= link_to 'back to all tools', tools_path %>
+    </div>
+
+    <div class= "banner1" style="background-image: url('<%= cl_image_path @tool.photo.identifier %>')">
+    </div>
+
+  <div class= "container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2><%= @tool.name %></h2>
+      </div>
+      <div class="col-sm-4">
+        <h2><%=@tool.price_per_day%> EUR per day</h2>
+      </div>
+      <div class="col-sm-4">
+        <h2> book now </h2>
+     </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Details</h2>
+          <h2><%= @tool.name %></h1>
+          <p><%= @tool.category %><p>
+          <p><%=@tool.description%></p>
+          <p><%= @tool.location%></p>
+      </div>
+
+      <div class="col-sm-4">
+        <h2> User </h2>
+         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      </div>
+        <%= render 'components/bookingform' %>
+    </div>
+  <div>
 </div>
-<div class="container">
+
+
+
+  <!-- div class="container">
   <div class="col-xs-12 col-sm-4">
     <div class="column"></div>
-       <divcolumn        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      </div>
-    <div class="column"></div>
+    <div  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+    </div>
+    <div class="container">
        <div>
-        <%= cl_image_tag @tool.photo.identifier, height: 300, width: 400, crop: :fil%>
+        <%#= cl_image_tag @tool.photo.identifier, height: 300, width: 400, crop: :fil%>
       </div>
 
-    <div class="column"></div>
+    <div class="container">
        <div>
-        <h1><%= @tool.name %></h1>
-        <h2><%= @tool.category %></h2>
+        <h1><%#= @tool.name %></h1>
+        <h2><%#= @tool.category %></h2>
       </div>
 
-    <div class="column"></div>
+    <div class="container">
         <div>
-           <p><%=@tool.description%></p>
+           <p><%#=@tool.description%></p>
         </div>
         <div>
-          <h3><%= @tool.location%></h2>
+          <h3><%#= @tool.location%></h2>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
