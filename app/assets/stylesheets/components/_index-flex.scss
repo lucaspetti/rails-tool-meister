@@ -1,0 +1,18 @@
+.flex-container {
+  display: flex;
+  margin: 20px;
+
+  }
+
+.flex-map {
+display: flex;
+flex: 0 0 60%;
+justify-content: space-between;
+
+}
+.map {
+  width: 50%;
+  height: 100vh;
+  top: 0 !important;
+
+}
