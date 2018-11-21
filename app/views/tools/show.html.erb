@@ -3,9 +3,13 @@
     <div class= "back-navigation">
       <%= link_to 'back to all tools', tools_path %>
     </div>
-
-    <div class= "banner-show" style="background-image: url('<%= cl_image_path @tool.photo.identifier %>')">
-    </div>
+    <% if @tool.photo.identifier %>
+      <div class= "banner-show" style="background-image: url('<%= cl_image_path @tool.photo.identifier %>')">
+      </div>
+    <% else %>
+      <div class= "banner-show" style="background-image: url('<%= cl_image_path @tool.image %>')">
+      </div>
+    <% end %>
 
   <div class= "container">
     <div class="row margin-top"style="background-color: white">
@@ -31,12 +35,12 @@
         </div>
 
       <div class="col-sm-4" style="background-color: white">
+         <img class="card-avatar" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
         <h3> Handyman </h3>
         <p> Max </p>
         <p> Mustermann </p>
         <p> Reviews </p>
-        <p> location</p>
-         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <!-- <p> location</p> -->
        </div>
     </div>
 
