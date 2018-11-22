@@ -1,7 +1,13 @@
 class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-
   skip_after_action :verify_authorized, only: [:my_tools]
+
+  include PgSearch
+  pg_search_scope :search_by_location_and_category,
+    against: [:location, :category],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
   def index
     if params[:location] && params[:category]
@@ -18,7 +24,6 @@ class ToolsController < ApplicationController
       @tools = Tool.all
 
       @tools = Tool.where.not(latitude: nil, longitude: nil)
-
       @markers = @tools.map do |tool|
         {
           lng: tool.longitude,
@@ -26,16 +31,6 @@ class ToolsController < ApplicationController
         }
       end
     end
-
-    def set_map
-    end
-
-    # raise
-    # @tools = Tool.all
-    # tools_cat = Tool.where(category: params[:category])
-    # @tools = (tools_cat + tools_loc).uniq
-    # raise
-    # @tools = policy_scope(Tool)
   end
 
   def my_tools
@@ -84,6 +79,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :category, :location, :photo, :price_per_day, :discription   )
+    params.require(:tool).permit(:name, :category, :location, :photo, :price_per_day, :description )
   end
 end
