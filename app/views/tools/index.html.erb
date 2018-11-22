@@ -1,4 +1,5 @@
-
+<div class="flex-container">
+  <div class="flex-cards">
 <div class="container">
   <div class="row">
     <% @tools.each do |tool| %>
@@ -25,12 +26,13 @@
       </div>
     <% end %>
   </div>
-  <div
+</div>
+</div>
+<div class="flex-map">
+  <div class="map"
   id="map"
-  style="width: 100%;
-  height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 </div>
-
+</div>
