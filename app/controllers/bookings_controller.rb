@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to my_bookings_path
     else
-      redirect_to tool(@tool)
+      redirect_to tool_path(@tool)
     end
   end
 
