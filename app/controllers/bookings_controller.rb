@@ -18,10 +18,11 @@ class BookingsController < ApplicationController
     @booking.tool = @tool
     @booking.user = current_user
     authorize @tool
+
     if @booking.save
       redirect_to my_bookings_path
     else
-      render :my_bookings
+      redirect_to tool_path(@tool)
     end
   end
 
