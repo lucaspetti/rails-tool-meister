@@ -1,4 +1,48 @@
-<div class="text-center">
+<!-- insert your profile header -->
+<div class="profile-header-wrapper">
+  <div class="container profile-header-container text-center">
+    <div class="profile-header-infos">
+      <!-- <img src="css/images/ole.jpg" alt="avatar"> -->
+      <h1>Your Bookings</h1>
+      <!-- <h2>co-founder @YourStartup</h2> -->
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <% @bookings.each do |b| %>
+  <div class="product">
+    <!-- <div class="product-upvote">
+      <div class="product-arrow"></div>
+      <div class="product-count">95</div>
+    </div> -->
+    <div class="product-image" style="background-image: url('<%= cl_image_path b.tool.image %>');">
+          </div>
+    <div class="product-body">
+      <h3><%= b.tool.name %></h3>
+      <p><%= b.tool.price_per_day %> EUR per day</p>
+    </div>
+    <ul class="list-inline product-controls">
+      <li>Booking time:</li>
+      <li><%= b.start_date %></li>
+      <li>—</li>
+      <li><%= b.end_date %></li>
+    </ul>
+  </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="text-center">
   <h3>Your bookings:</h3>
   <% @bookings.each do |b| %>
     <h4>Tool:</h4>
@@ -8,4 +52,4 @@
     <h4>End date:</h4>
     <%= b.end_date %>
   <% end %>
-</div>
+</div> -->
