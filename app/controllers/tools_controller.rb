@@ -2,13 +2,6 @@ class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_authorized, only: [:my_tools]
 
-  include PgSearch
-  pg_search_scope :search_by_location_and_category,
-    against: [:location, :category],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
-
   def index
     if params[:location] && params[:category]
       if params[:location].empty? && params[:category].empty?
@@ -16,7 +9,7 @@ class ToolsController < ApplicationController
       elsif params[:location].empty?
         @tools = Tool.where(category: params[:category])
       elsif params[:category].empty?
-        @tools = Tool.where(location: params[:location])
+        @tools = Tool.search_by_location_and_category(params[:location])
       else
         @tools = Tool.where(location: params[:location], category: params[:category])
       end
