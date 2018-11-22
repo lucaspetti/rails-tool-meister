@@ -9,7 +9,7 @@ description = ["Its a wonderful tool- maintained by my friend Cedric",
   "Its a wonderful tool- maintained by my Lucas"]
 
 Tool.create!(name: "Grinding Machine",
-  image: 'v1542723942/Tools/106105_1.jpg',
+  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/106105_1.jpg'),
   description: description.sample,
   category: category[0],
   available: true,
@@ -18,7 +18,7 @@ Tool.create!(name: "Grinding Machine",
   price_per_day: price_per_day.sample)
 
 Tool.create!(name: "Chainsaw",
-  image: 'v1542723942/Tools/123456.jpg',
+  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/123456.jpg'),
   description: description.sample,
   category: "Eletric Tools",
   available: true,
@@ -27,7 +27,7 @@ Tool.create!(name: "Chainsaw",
   price_per_day: price_per_day.sample)
 #
 Tool.create!(name: "Grinding Machine 2",
-  image: 'v1542723942/Tools/418469_1.jpg',
+  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/418469_1.jpg'),
   description: description.sample,
   category: category[0],
   available: true,
@@ -36,7 +36,7 @@ Tool.create!(name: "Grinding Machine 2",
   price_per_day: price_per_day.sample)
 
 Tool.create!(name: "Power Drill",
-  image: 'v1542723942/Tools/283333_1.jpg',
+  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/283333_1.jpg'),
   description: description.sample,
   category: category.sample,
   available: true,
