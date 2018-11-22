@@ -24,4 +24,22 @@ margin:10px -15px
   justify-content: center
   }
 
+.flex-map-show {
+display: flex;
+margin-top : 5px;
+flex: 0 10%;
+margin-left: 10px;
+margin-right: 10px;
+}
 
+
+.map-show {
+  width: 100%;
+  height: 50vh;
+  top: 0 !important;
+
+}
+
+.padding{
+  padding: 15px;
+}

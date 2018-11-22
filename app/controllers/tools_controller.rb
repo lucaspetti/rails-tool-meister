@@ -38,6 +38,11 @@ class ToolsController < ApplicationController
     @tool = Tool.find(params[:id])
     authorize @tool
     @booking = Booking.new
+
+    @markers = {
+      lng: @tool.longitude,
+      lat: @tool.latitude
+      }
   end
 
   def new
