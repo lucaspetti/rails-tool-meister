@@ -8,7 +8,7 @@ class Tool < ApplicationRecord
   validates :location, presence: true
   validates :price_per_day, presence: true
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :image, PhotoUploader
   # CLOUDINARY
   # mount_uploader :photo, PhotoUploader
   # validates_presence_of :photo
