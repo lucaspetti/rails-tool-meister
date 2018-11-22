@@ -1,6 +1,5 @@
 class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-
   skip_after_action :verify_authorized, only: [:my_tools]
 
   def index
@@ -10,15 +9,15 @@ class ToolsController < ApplicationController
       elsif params[:location].empty?
         @tools = Tool.where(category: params[:category])
       elsif params[:category].empty?
-        @tools = Tool.where(location: params[:location])
+        @tools = Tool.search_by_location_and_category(params[:location])
       else
         @tools = Tool.where(location: params[:location], category: params[:category])
       end
     else
       @tools = Tool.all
+    end
 
       @tools = Tool.where.not(latitude: nil, longitude: nil)
-
       @markers = @tools.map do |tool|
         {
           lng: tool.longitude,
@@ -26,16 +25,6 @@ class ToolsController < ApplicationController
         }
       end
     end
-
-    def set_map
-    end
-
-    # raise
-    # @tools = Tool.all
-    # tools_cat = Tool.where(category: params[:category])
-    # @tools = (tools_cat + tools_loc).uniq
-    # raise
-    # @tools = policy_scope(Tool)
   end
 
   def my_tools
@@ -84,6 +73,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :category, :location, :image, :price_per_day, :discription)
+    params.require(:tool).permit(:name, :category, :location, :image, :price_per_day, :description)
   end
 end

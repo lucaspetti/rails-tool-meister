@@ -8,7 +8,7 @@ description = ["Its a wonderful tool- maintained by my friend Cedric",
   "Its a wonderful tool- maintained by my Ole",
   "Its a wonderful tool- maintained by my Lucas"]
 
-Tool.create(name: "Grinding Machine",
+Tool.create!(name: "Grinding Machine",
   image: 'v1542723942/Tools/106105_1.jpg',
   description: description.sample,
   category: category[0],
