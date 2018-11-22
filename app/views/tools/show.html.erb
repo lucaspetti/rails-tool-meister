@@ -52,11 +52,10 @@
         <div class="padding">
           <h3>Where to find the tool</h3>
         </div>
-          <p><%= @tool.location%></p>
-          <div class= flex-map-show>
+          <div class= "flex-map-show margin-top">
             <div class="map-show"
             id="map"
-            data-markers="<%= @markers.to_json %>"
+            data-markers="[<%= @markers.to_json %>]"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
             ></div>
         </div>
