@@ -27,8 +27,6 @@ class ToolsController < ApplicationController
         lat: tool.latitude
       }
     end
-
-    # raise
   end
 
   def my_tools
