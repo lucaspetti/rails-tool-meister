@@ -7,7 +7,7 @@
   %>
   <%#= select_tag "location", options_from_collection_for_select(@locations, "id", "name")  %>
   <div class="form-group">
-  <%= select_tag "location", options_for_select(@locations, "location"), include_blank: true,
+  <%= select_tag "location", options_for_select(@locations, "location"),
     class: "form-control",
      prompt: "Select a city" %>
   </div>
@@ -21,7 +21,6 @@
 
 <% end %>
 </div>
-
 
 <!-- <form action="/flats", method='get' class="form-container">
   <h1 class="form-header">Book unique homes and experiences.</h1>
