@@ -39,7 +39,10 @@ class ToolsController < ApplicationController
     authorize @tool
     @booking = Booking.new
 
-
+    @markers = {
+      lng: @tool.longitude,
+      lat: @tool.latitude
+      }
   end
 
   def new
