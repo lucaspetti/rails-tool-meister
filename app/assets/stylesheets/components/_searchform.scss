@@ -39,10 +39,11 @@
   letter-spacing: 1.5px;
 }
 .button {
+  width: 100%;
   font-family: Helvetica;
   font-weight: bolder;
   background-color: #fee034;
-  color: #494944;
+  color: #313E50;
   font-size: 15px;
   border-radius: 5px;
   padding: 10px 20px;
@@ -56,3 +57,7 @@
 }
 
 .button:hover {color: black}
+
+.form-inputs {
+  color: #313E50;
+}
