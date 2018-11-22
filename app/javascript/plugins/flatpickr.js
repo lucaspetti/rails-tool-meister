@@ -5,3 +5,5 @@ flatpickr(".datepicker", {
 altInput: true,
 minDate: "today"
 })
+
+
