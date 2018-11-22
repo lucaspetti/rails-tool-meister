@@ -4,7 +4,6 @@ class Tool < ApplicationRecord
 
   validates :name, presence: true
   validates :category, presence: true
-  #validates :photo, presence: true
   validates :location, presence: true
   validates :price_per_day, presence: true
 
