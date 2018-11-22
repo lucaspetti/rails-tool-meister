@@ -1,4 +1,10 @@
-<h2>Log in</h2>
+<div class="banner" style="background-image: url('https://images.unsplash.com/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e6cb38a2b7ce702bc48afa2badadef6&auto=format&fit=crop&w=916&q=80');">
+  <div class="banner-content">
+
+
+    <h2 class="text-center">Log in</h2>
+    <div class="form-container">
+
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -13,8 +19,14 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "button" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+</div>
+</div>
+
