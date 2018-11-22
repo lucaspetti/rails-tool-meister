@@ -1,38 +1,38 @@
 <div class="flex-container">
   <div class="flex-cards">
-<div class="container">
-  <div class="row">
-    <% @tools.each do |tool| %>
-      <div class="col-xs-12 col-sm-4">
-        <!-- insert <div class="card"> -->
-        <div class="card">
-          <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tool.image %>');">
-          </div>
+    <div class="container-fluid">
+      <div class="row">
+        <% @tools.each do |tool| %>
+        <div class="col-xs-12 col-sm-4">
+          <!-- insert <div class="card"> -->
+            <div class="card">
+              <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path tool.image %>');">
+              </div>
 
-          <div class="card-content">
-            <div class="content-left">
-              <h4><%=tool.name%></h4>
-              <p><%= truncate(tool.description, length: 50) %></p>
-           </div>
+              <div class="card-content">
+                <div class="content-left">
+                  <h4><%=tool.name%></h4>
+                  <p><%= truncate(tool.description, length: 50) %></p>
+                </div>
 
-            <div class="content-right">
-              <p class="price"><%=tool.price_per_day%> EUR per day</p>
+                <div class="content-right">
+                  <p class="price"><%=tool.price_per_day%> EUR per day</p>
 
-              <!-- <img class="card-avatar" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+                  <!-- <img class="card-avatar" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+                </div>
+              </div>
+              <a class="card-link" href="<%= tool_path(tool) %>"></a>
             </div>
           </div>
-          <a class="card-link" href="<%= tool_path(tool) %>"></a>
+          <% end %>
         </div>
       </div>
-    <% end %>
+    </div>
+    <div class="flex-map">
+      <div class="map"
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
   </div>
-</div>
-</div>
-<div class="flex-map">
-  <div class="map"
-  id="map"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-</div>
-</div>
