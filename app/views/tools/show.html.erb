@@ -16,7 +16,7 @@
     </div>
 
     <div class="row margin-right" style="background-color: white">
-      <div class="container">
+      <div class="padding">
         <h3>Details</h3>
         <p><%= @tool.name %></p>
         <p><%= @tool.category %><p>
@@ -29,7 +29,7 @@
       </div>
 
       <div class="row margin-right" style="background-color: white">
-        <div class="container">
+        <div class="padding">
          <img class="card-avatar" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
          <h3> Handyman </h3>
          <p> Max </p>
@@ -40,12 +40,27 @@
    </div>
 
    <div class="col-sm-6">
-    <div class="margin-top" style="background-color: white">
-      <div class="row margin-right">
-        <div id="jump">
+
+      <div class="row margin-top" style="background-color: white">
+        <div id="jump" class="padding margin-right">
           <%= render 'components/bookingform' %>
         </div>
       </div>
+
+
+    <div class="row margin-top" style="background-color: white">
+        <div class="padding">
+          <h3>Where to find the tool</h3>
+        </div>
+          <p><%= @tool.location%></p>
+          <div class= flex-map-show>
+            <div class="map-show"
+            id="map"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+        </div>
     </div>
   </div>
 </div>
+
