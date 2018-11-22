@@ -7,24 +7,28 @@ class ToolsController < ApplicationController
       if params[:location].empty? && params[:category].empty?
         @tools = Tool.all
       elsif params[:location].empty?
-        @tools = Tool.where(category: params[:category])
+        @tools = Tool.search_by_location_and_category(params[:category])
       elsif params[:category].empty?
         @tools = Tool.search_by_location_and_category(params[:location])
       else
-        @tools = Tool.where(location: params[:location], category: params[:category])
+        @search_one = Tool.search_by_location_and_category(params[:location])
+        @search_two = Tool.search_by_location_and_category(params[:category])
+        @tools = @search_one & @search_two
       end
     else
-      @tools = Tool.all
+      @tools = Tool.search_by_location_and_category(params[:location])
     end
 
-      @tools = Tool.where.not(latitude: nil, longitude: nil)
-      @markers = @tools.map do |tool|
-        {
-          lng: tool.longitude,
-          lat: tool.latitude
-        }
-      end
+    # @tools = Tool.where.not(latitude: nil, longitude: nil)
+    # @tools = Tool.search_by_location_and_category(params[:location])
+    @markers = @tools.map do |tool|
+      {
+        lng: tool.longitude,
+        lat: tool.latitude
+      }
     end
+
+    # raise
   end
 
   def my_tools
