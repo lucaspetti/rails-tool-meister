@@ -1,1 +1,3 @@
 document.querySelector("[data-tool-id='<%= @tool.id %>']").remove();
+
+document.getElementById("tool-title").innerText = '<%= "tool".pluralize(@tools.size) %>'

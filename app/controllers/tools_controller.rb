@@ -30,7 +30,7 @@ class ToolsController < ApplicationController
   end
 
   def my_tools
-    @tools = policy_scope(Tool.where(user: current_user))
+      @tools = policy_scope(Tool.where(user: current_user))
     # render :index
   end
 
@@ -72,6 +72,7 @@ class ToolsController < ApplicationController
   end
 
   def destroy
+    @tools = policy_scope(Tool.where(user: current_user))
     @tool = Tool.find(params[:id])
     authorize @tool
     @tool.destroy
