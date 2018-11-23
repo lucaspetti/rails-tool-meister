@@ -7,11 +7,15 @@
     border-radius: 5px;
     background-color: white;
     color: grey;
+    opacity: 0.85;
+
 }
 
 .product:hover {
-    background: #f7f7fa;
+    // background: #f7f7fa;
     cursor: pointer;
+    box-shadow: 0 0 30px rgba(33,33,33,.2);
+    opacity: 0.95;
 }
 
 .product-upvote {
