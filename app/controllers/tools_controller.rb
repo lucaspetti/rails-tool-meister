@@ -31,7 +31,7 @@ class ToolsController < ApplicationController
 
   def my_tools
     @tools = policy_scope(Tool.where(user: current_user))
-    render :index
+    # render :index
   end
 
   def show
