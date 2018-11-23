@@ -3,8 +3,7 @@
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
       <!-- <img src="css/images/ole.jpg" alt="avatar"> -->
-      <h1>Your Bookings</h1>
-      <!-- <h2>co-founder @YourStartup</h2> -->
+      <h1>Your <%= "Booking".pluralize(@bookings.size) %> </h1>
     </div>
   </div>
 </div>
@@ -12,7 +11,7 @@
 
 <div class="container">
   <% @bookings.each do |b| %>
-  <div class="product">
+  <div class="product" data-booking-id="<%= b.id %>">
     <!-- <div class="product-upvote">
       <div class="product-arrow"></div>
       <div class="product-count">95</div>
@@ -28,6 +27,7 @@
       <li><%= b.start_date %></li>
       <li>—</li>
       <li><%= b.end_date %></li>
+      <li><%= link_to "Remove", booking_path(b), method: :delete, remote: true %></li>
     </ul>
   </div>
   <% end %>
