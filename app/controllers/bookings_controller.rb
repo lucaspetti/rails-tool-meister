@@ -8,10 +8,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def new
-    # @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @tool = Tool.find(params[:tool_id])
@@ -31,21 +27,12 @@ class BookingsController < ApplicationController
     render :index
   end
 
-  # def edit
-  #   @booking = Booking.find(params[:id])
-  # end
-
-  # def update
-  #   @booking = Booking.find(params[:id])
-  #   @booking.update(booking_params)
-  #   redirect_to bookings_path
-  # end
-
-  # def destroy
-  #   @booking = Booking.find(params[:id])
-  #   @booking.destroy
-  #   redirect_to bookings_path
-  # end
+  def destroy
+    @bookings = policy_scope(Booking.where(user: current_user))
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+  end
 
   private
 

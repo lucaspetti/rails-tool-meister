@@ -1,0 +1,36 @@
+<!-- insert your profile header -->
+<div class="profile-header-wrapper">
+  <div class="container profile-header-container text-center">
+    <div class="profile-header-infos">
+      <!-- <img src="css/images/ole.jpg" alt="avatar"> -->
+      <h1>Your <%= "Tool".pluralize(@tools.size) %></h1>
+      <!-- <h2>co-founder @YourStartup</h2> -->
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @tools.each do |b| %>
+    <div class="col-xs-12 col-sm-6" data-tool-id="<%= b.id %>">
+      <div class="product">
+    <!-- <div class="product-upvote">
+      <div class="product-arrow"></div>
+      <div class="product-count">95</div>
+    </div> -->
+    <div class="product-image" style="background-image: url('<%= cl_image_path b.image %>');">
+    </div>
+    <div class="product-body">
+      <h3><%= b.name %></h3>
+      <p class="price"><%= b.price_per_day %> EUR per day</p>
+    </div>
+    <div class="product-body-right">
+      <p><%= link_to "⚙️", tool_path(b), style: "text-decoration: none"%></p>
+      <p><%= link_to "🗑", tool_path(b), method: :delete, remote: true, style: "text-decoration: none" %></p>
+    </div>
+  </div>
+  </div>
+  <% end %>
+</div>
+</div>

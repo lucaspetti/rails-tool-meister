@@ -31,7 +31,7 @@ class ToolsController < ApplicationController
 
   def my_tools
     @tools = policy_scope(Tool.where(user: current_user))
-    render :index
+    # render :index
   end
 
   def show
@@ -73,8 +73,9 @@ class ToolsController < ApplicationController
 
   def destroy
     @tool = Tool.find(params[:id])
+    authorize @tool
     @tool.destroy
-    redirect_to tools_path
+    # redirect_to my_tools_path
   end
 
   private
