@@ -1,62 +1,86 @@
 
-<div class= "col-sm-12">
-  <div class="col-sm-6">
-    <div class="row margin-right">
-      <div class= "banner-show" style="background-image: url('<%= cl_image_path @tool.image %>')">
-      </div>
-    </div>
-
-    <div class="row margin-right" style="background-color: white">
-      <div class="section title">
-        <h3><%= @tool.name %></h3>
-      </div>
-      <div class="section title price-show">
-        <h3><%=@tool.price_per_day%> EUR per day</h3>
-      </div>
-    </div>
-
-    <div class="row margin-right" style="background-color: white">
-      <div class="padding">
-        <h3>Details</h3>
-        <p><%= @tool.name %></p>
-        <p><%= @tool.category %><p>
-          <p><%=@tool.description%></p>
-          <p><%= @tool.location%></p>
+  <div class="row">
+    <div class="margin-top" style="margin: 15px">
+      <div class="section1 card-show" style="background-color: white">
+        <div class="title">
+          <h3><%= @tool.name %></h3>
+        </div>
+        <div class="title price-show">
+          <h3><%=@tool.price_per_day%> EUR per day</h3>
+        </div>
+        <div class="title">
+          <h3><i class="fas fa-map-marker-alt"></i></i><%=@tool.location%></h3>
         </div>
       </div>
-
-      <div class="row margin-right" style="background-color: white">
-        <div class="padding">
-         <img class="card-avatar" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-         <h3> Handyman </h3>
-         <p> Max </p>
-         <p> Mustermann </p>
-         <p> Reviews </p>
-       </div>
-     </div>
-   </div>
-
-   <div class="col-sm-6">
-
-      <div class="row margin-top" style="background-color: white">
-        <div id="jump" class="padding margin-right">
-          <%= render 'components/bookingform' %>
-        </div>
-      </div>
-
-
-    <div class="row margin-top" style="background-color: white">
-        <div class="padding">
-          <h3>Where to find the tool</h3>
-        </div>
-          <div class= "flex-map-show margin-top">
-            <div class="map-show"
-            id="map"
-            data-markers="[<%= @markers.to_json %>]"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div>
-        </div>
     </div>
   </div>
+<div class="main-container-show">
+
+<div style="margin-right: 30px">
+  <div class="row card-show" style="width: 69vw; height: 350px;background-color: white ">
+    <div class="col-sm-6" style="height: 90%">
+      <div class= "banner-show margin-top" style="background-image: url('<%= cl_image_path @tool.image %>'); height: 100%;">
+      </div>
+    </div>
+
+    <div class="col-sm-6" style="height: 90%">
+      <div class="" style="background-color: white; ; height: 100%;">
+        <div class="padding">
+          <p>More Information about:</p>
+          <h3><%= @tool.name %></h3>
+          <p><%= @tool.category %><p>
+            <p><%=@tool.description%></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row" style="width: 70vw; height: 450px; margin-top: 15px">
+
+          <div class="col-sm-6" style="height: 100%">
+            <div class="card-show" style="background-color: white; ; height: 100%; margin-left: -15px">
+              <div class="padding">
+               <h3>Where to find the tool</h3>
+               <div class= "flex-map-show margin-top">
+                <div class="map-show"
+                id="map"
+                data-markers="[<%= @markers.to_json %>]"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6" style="height: 100%">
+          <div class="card-show" style="background-color: white; ; height: 100%">
+            <div class="padding">
+             <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+             <h3> Handyman </h3>
+             <p> Max </p>
+             <p> Mustermann </p>
+             <p> Reviews: </p>
+             <div class="card-show-review">
+              <p>This is the best tool I ever used</p>
+             </div>
+          </div>
+          </div>
+        </div>
+    </div>
 </div>
+    <div class="right-side">
+      <div class="row" style="width: 28vw; height: 450px">
+        <div class="card-show" style="background-color: white ; height: 350px">
+          <div id="jump" class="padding">
+            <%= render 'components/bookingform' %>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+
+</div>
+
 
