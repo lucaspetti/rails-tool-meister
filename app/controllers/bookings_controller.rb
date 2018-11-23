@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @bookings = policy_scope(Booking.where(user: current_user))
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
