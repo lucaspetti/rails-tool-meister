@@ -14,7 +14,7 @@ description = ["Its a wonderful tool- maintained by my friend Cedric",
 puts "Done. Creating tools..."
 
 Tool.create!(name: "Grinder",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/106105_1.jpg'),
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542981130/grinder_2.jpg'),
   description: "A wonderful grinder! Very nice to make any floors looks like new",
   category: category[2],
   available: true,
@@ -23,7 +23,7 @@ Tool.create!(name: "Grinder",
   price_per_day: price_per_day.sample)
 
 Tool.create!(name: "Killer Chainsaw",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/123456.jpg'),
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542982726/pexels-photo-209229.jpg'),
   description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
   category: category[0],
   available: true,
@@ -33,7 +33,7 @@ Tool.create!(name: "Killer Chainsaw",
 
 
 Tool.create!(name: "Power Drill",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/283333_1.jpg'),
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542980941/Drill_Berlin_2.jpg'),
   description: "Drilling your dreams! Avoid using on humans it hurts",
   category: category[1],
   available: true,
@@ -42,7 +42,7 @@ Tool.create!(name: "Power Drill",
   price_per_day: price_per_day.sample)
 
 Tool.create!(name: "Crazy Grinder",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/106105_1.jpg'),
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542982878/grinder_3.jpg'),
   description: "A wonderful grinder! Very nice to make any floors looks like new",
   category: category[2],
   available: true,
@@ -50,8 +50,8 @@ Tool.create!(name: "Crazy Grinder",
   location: "Rudi-Dutschke-Straße 26, Berlin",
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "great Chainsaw",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/123456.jpg'),
+Tool.create!(name: "Great Chainsaw",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542980941/chainsaw_3.jpg'),
   description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
   category: category[0],
   available: true,
@@ -61,7 +61,7 @@ Tool.create!(name: "great Chainsaw",
 
 
 Tool.create!(name: "Super Drill",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/283333_1.jpg'),
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542981129/drill_2.jpg'),
   description: "Drilling your dreams! Avoid using on humans it hurts",
   category: category[1],
   available: true,
@@ -69,59 +69,118 @@ Tool.create!(name: "Super Drill",
   location: "Prenzlauer Allee 80, Berlin",
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Bavarian Drill",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/283333_1.jpg'),
-  description: "This great drill will only works if you drank 5 beers and speak badly of Berliners!",
-  category: category[1],
+
+Tool.create!(name: "Grinder",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542981130/grinder_2.jpg'),
+  description: "A wonderful grinder! Very nice to make any floors looks like new",
+  category: category[2],
   available: true,
   user: User.first,
   location: "Romanstraße 1, Munich",
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Grinder",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/106105_1.jpg'),
-  description: "A wonderful grinder! Very nice to make any floors looks like new",
-  category: category[2],
+Tool.create!(name: "Killer Chainsaw",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542982726/pexels-photo-209229.jpg'),
+  description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
+  category: category[0],
   available: true,
   user: User.first,
   location: "Max-Mannheimer-Platz 1, Munich",
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Killer Chainsaw",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/123456.jpg'),
-  description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
-  category: category[0],
+
+Tool.create!(name: "Power Drill",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542980941/Drill_Berlin_2.jpg'),
+  description: "Drilling your dreams! Avoid using on humans it hurts",
+  category: category[1],
   available: true,
   user: User.first,
   location: "Arnulfstraße 52, Munich",
   price_per_day: price_per_day.sample)
 
+Tool.create!(name: "Crazy Grinder",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542982878/grinder_3.jpg'),
+  description: "A wonderful grinder! Very nice to make any floors looks like new",
+  category: category[2],
+  available: true,
+  user: User.first,
+  location: "Spiridon Louis Ring 21, Munich",
+  price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Düsseldorfer Drill",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/283333_1.jpg'),
-  description: "Drilling your dreams in Düsseldorf",
+Tool.create!(name: "Great Chainsaw",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542980941/chainsaw_3.jpg'),
+  description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
+  category: category[0],
+  available: true,
+  user: User.first,
+  location: "Maria Ward Straße 1A, Munich",
+  price_per_day: price_per_day.sample)
+
+
+Tool.create!(name: "Super Drill",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542981129/drill_2.jpg'),
+  description: "Drilling your dreams! Avoid using on humans it hurts",
   category: category[1],
+  available: true,
+  user: User.first,
+  location: "Ottobrunner Straße 61, Munich",
+  price_per_day: price_per_day.sample)
+
+Tool.create!(name: "Grinder",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542981130/grinder_2.jpg'),
+  description: "A wonderful grinder! Very nice to make any floors looks like new",
+  category: category[2],
   available: true,
   user: User.first,
   location: "Erkrather Str. 230, Düsseldorf",
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Powerful Grinder",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/106105_1.jpg'),
-  description: "A wonderful grinder! Very nice to make any floors looks like new",
-  category: category[2],
+Tool.create!(name: "Killer Chainsaw",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542982726/pexels-photo-209229.jpg'),
+  description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
+  category: category[0],
   available: true,
   user: User.first,
   location: "Eugen-Richter-Straße 21, Düsseldorf",
   price_per_day: price_per_day.sample)
 
-Tool.create!(name: "Killer Chainsaw",
-  image: open('http://res.cloudinary.com/ds7t2o8nq/image/upload/v1542723942/Tools/123456.jpg'),
-  description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
-  category: category[0],
+
+Tool.create!(name: "Power Drill",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542980941/Drill_Berlin_2.jpg'),
+  description: "Drilling your dreams! Avoid using on humans it hurts",
+  category: category[1],
   available: true,
   user: User.first,
   location: "Fischerstraße 87, Düsseldorf",
   price_per_day: price_per_day.sample)
+
+Tool.create!(name: "Crazy Grinder",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542982878/grinder_3.jpg'),
+  description: "A wonderful grinder! Very nice to make any floors looks like new",
+  category: category[2],
+  available: true,
+  user: User.first,
+  location: "Königsbergerstraße 87, Düsseldorf",
+  price_per_day: price_per_day.sample)
+
+Tool.create!(name: "Great Chainsaw",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542980941/chainsaw_3.jpg'),
+  description: "Amazing Tool for serial killer. Will even cut through a wall in case your chasing your victim!",
+  category: category[0],
+  available: true,
+  user: User.first,
+  location: "Heerdter Landstraße 160, Düsseldorf",
+  price_per_day: price_per_day.sample)
+
+
+Tool.create!(name: "Super Drill",
+  image: open('https://res.cloudinary.com/db7b7nvyi/image/upload/v1542981129/drill_2.jpg'),
+  description: "Drilling your dreams! Avoid using on humans it hurts",
+  category: category[1],
+  available: true,
+  user: User.first,
+  location: "Glockenstraße 20 Düsseldorf",
+  price_per_day: price_per_day.sample)
+
 
 puts "Tools created!"
