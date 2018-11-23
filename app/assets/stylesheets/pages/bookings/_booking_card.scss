@@ -6,7 +6,7 @@
     margin: 10px 0;
     border-radius: 10px;
     background-color: white;
-    color: grey;
+    color: #484e4f;
     opacity: 0.85;
   }
 
@@ -61,20 +61,22 @@
 
 .product-body-right p {
     font-weight: lighter;
-    color: black;
+    color: #484e4f;
     margin: 20px 0;
     font-size: 18px;
 }
+
 
 .product-body h3 {
     font-weight: bold;
     font-size: 23px;
     margin-top: 15px 0;
+    color: black;
 }
 
 .product-body p {
     font-weight: lighter;
-    color: black;
+    color: #484e4f;
     margin: 20px 0;
     font-size: 18px;
 }
@@ -82,10 +84,17 @@
 .product-controls a {
     padding: 0 20px;
     font-size: 17px;
-    color: #E6E6E6;
+    color: #484e4f;
+    text-decoration: none
+}
+
+.product-controls a:hover {
+    color: #ee555d;
 }
 
 .product-body .price {
     font-weight: lighter;
     color: green;
 }
+
+

@@ -26,8 +26,8 @@
       <p class="price"><%= b.price_per_day %> EUR per day</p>
     </div>
     <div class="product-body-right">
-      <p>⚙️</p>
-      <p>🗑</p>
+      <p><%= link_to "⚙️", tool_path(b), style: "text-decoration: none"%></p>
+      <p><%= link_to "🗑", tool_path(b), method: :delete, remote: true, style: "text-decoration: none" %></p>
     </div>
   </div>
   </div>
