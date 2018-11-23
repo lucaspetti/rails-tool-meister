@@ -1,5 +1,3 @@
 document.querySelector("[data-booking-id='<%= @booking.id %>']").remove();
 
 document.getElementById("booking-title").innerText = '<%= "Booking".pluralize(@bookings.size) %>'
-// .pluralize(@bookings.size)
-
